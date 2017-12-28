@@ -9,6 +9,7 @@ public class PancakeMenuIterator implements Iterator {
     ArrayList items;
     int position = 0;
 
+
     public PancakeMenuIterator(ArrayList items) {
         this.items = items;
     }
@@ -19,6 +20,7 @@ public class PancakeMenuIterator implements Iterator {
             return false;
         else
             return true;
+
     }
 
     @Override
