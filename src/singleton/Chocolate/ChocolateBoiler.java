@@ -10,10 +10,11 @@ public class ChocolateBoiler {
     private static ChocolateBoiler uniqueInstance;
 
     /*构造器声明为私有，只有自Singleton类类内才可以调用构造器*/
-    private  ChocolateBoiler() {
+    private ChocolateBoiler() {
         empty = false;
         boiled = false;
     }
+
     /*getInstance()方法实例化对象，并返回*/
     public static ChocolateBoiler getInstance() {
         if (uniqueInstance == null) {
@@ -32,17 +33,21 @@ public class ChocolateBoiler {
         }
 
     }
+
     public void drain() {
         if (!isEmpty() && isBoiled())
             empty = true;
     }
+
     public void boil() {
         if (!isEmpty() && !isBoiled())
             boiled = true;
     }
+
     public boolean isEmpty() {
         return empty;
     }
+
     public boolean isBoiled() {
         return boiled;
     }

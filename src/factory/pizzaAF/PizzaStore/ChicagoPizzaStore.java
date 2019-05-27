@@ -8,6 +8,7 @@ import factory.pizzaAF.Pizza_af.*;
  * Created by xu on 2017/6/24.
  */
 public class ChicagoPizzaStore extends PizzaStore {
+    // 抽象工厂面向多个产品等级结构，每个具体  能创建多个具体产品类实例
     @Override
     protected Pizza createPizza(String item) {
         Pizza pizza = null;

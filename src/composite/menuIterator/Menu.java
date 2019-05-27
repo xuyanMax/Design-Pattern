@@ -52,7 +52,7 @@ public class Menu extends MenuComponent {//实现组合菜单
 
         Iterator iterator = menuComponents.iterator();
 
-        while(iterator.hasNext()) {
+        while (iterator.hasNext()) {
             MenuComponent menuComponent = (MenuComponent) iterator.next();
             menuComponent.print();
         }

@@ -45,7 +45,7 @@ public class MenuItem extends MenuComponent {//实现菜单项
         if (isVegetarian()) {
             System.out.print("(v)");
         }
-        System.out.println(", " +getPrice());
+        System.out.println(", " + getPrice());
         System.out.println("    - -" + getDescription());
     }
 

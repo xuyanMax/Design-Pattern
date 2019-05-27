@@ -42,10 +42,10 @@ public class MenuItem extends MenuComponent {//实现菜单项
     @Override
     public void print() {
         System.out.print("  " + getName());
-        if (isVegetarian()) {
+        if (isVegetarian())
             System.out.print("(v)");
-        }
-        System.out.println(", " +getPrice());
+
+        System.out.println(", " + getPrice());
         System.out.println("    - -" + getDescription());
     }
 

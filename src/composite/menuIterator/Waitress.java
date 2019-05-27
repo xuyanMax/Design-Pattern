@@ -13,20 +13,20 @@ public class Waitress {
     }
 
 
-    public void printMenu(){
+    public void printMenu() {
         allMenus.print();
     }
 
     //使用CompositeIterator
-    public void printVegetarian(){
+    public void printVegetarian() {
         Iterator iterator = allMenus.createIterator();//得到所有菜单的Composite迭代器
         System.out.println("\nVEGETARIAN MENU\n ----");
-        while(iterator.hasNext()) {
+        while (iterator.hasNext()) {
             MenuComponent componentMenu = (MenuComponent) iterator.next();
             try {
                 if (componentMenu.isVegetarian()) // Menu菜单调用该方法会抛出异常需要用catch接住
                     componentMenu.print();
-            }catch (UnsupportedOperationException e) {
+            } catch (UnsupportedOperationException e) {
                 //
             }
         }

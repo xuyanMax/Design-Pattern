@@ -25,8 +25,7 @@ public class CompositeIterator implements Iterator {
             Iterator iterator = (Iterator) stack.peek();
             if (iterator.hasNext()) {
                 return true;
-            }
-            else {
+            } else {
                 stack.pop();
                 return hasNext();
             }
@@ -42,8 +41,7 @@ public class CompositeIterator implements Iterator {
                 stack.push(component.createIterator());
             }
             return component;//不论是菜单还是菜单项，都返回
-        }
-        else return null;
+        } else return null;
     }
 
     @Override
