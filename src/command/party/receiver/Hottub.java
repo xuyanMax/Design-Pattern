@@ -9,24 +9,30 @@ public class Hottub {
 
     public Hottub() {
     }
+
     public void on() {
         on = true;
     }
+
     public void off() {
         on = false;
     }
+
     public void circulate() {
         if (on)
             System.out.println("Hottub is bubbling");
     }
+
     public void jetOn() {
         if (on)
             System.out.println("Hottub jets are on");
     }
+
     public void jetOff() {
         if (!on)
             System.out.println("Hottub jets are off");
     }
+
     public void setTemperature(int t) {
         if (t > this.temperature)
             System.out.println("Hottub is heating to a steaming " + t + " degrees");

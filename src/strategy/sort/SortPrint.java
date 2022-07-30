@@ -13,14 +13,15 @@ public class SortPrint {
     }
 
     //算法框架
-    public void execute(){
+    public void execute() {
         print();
         sorter.sort(data);
         print();
     }
-    public void print(){
-        for (Comparable c:data)
-            System.out.print(c+" ");
+
+    public void print() {
+        for (Comparable c : data)
+            System.out.print(c + " ");
         System.out.println("");
     }
 }

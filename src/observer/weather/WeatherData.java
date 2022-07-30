@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Created by xu on 07/07/2017.
  */
-public class WeatherData implements Subject {
+public class WeatherData implements Subject { //Subject subclass
     private ArrayList observers;
     private float temp;
     private float humidity;
@@ -23,12 +23,12 @@ public class WeatherData implements Subject {
     @Override
     public void removeObserver(Observer o) {
         int i = observers.indexOf(o);
-        if (i>=0) observers.remove(i);
+        if (i >= 0) observers.remove(i);
     }
 
     @Override
     public void notifyObservers() {
-        for (int i=0; i<observers.size(); i++) {
+        for (int i = 0; i < observers.size(); i++) {
             Observer observer = (Observer) observers.get(i);
             observer.update(temp, humidity, pressure);
         }
@@ -41,7 +41,7 @@ public class WeatherData implements Subject {
         measurementsChanged();
     }
 
-    public void measurementsChanged(){
+    public void measurementsChanged() {
         notifyObservers();
     }
 

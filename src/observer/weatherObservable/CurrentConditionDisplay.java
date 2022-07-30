@@ -15,14 +15,15 @@ public class CurrentConditionDisplay implements Observer, DisplayElement {
     // we've changed the update() method to take both OBSERVABLE and the optional data argument
     @Override
     public void update(Observable obs, Object arg) {
-        if (obs instanceof  WeatherData) {// we first make sure the obs is of type WeatherData and
+        if (obs instanceof WeatherData) {// we first make sure the obs is of type WeatherData and
             WeatherData wd = (WeatherData) obs;
             this.temperature = wd.getTemperature();
-            this.humidity = wd.getHumidity();// we use the getter methods to get tmp and humd
+            this.humidity = wd.getHumidity();// we use the getter methods to get tmp and humidity
 
             display();// call display() method
         }
     }
+
     // our constructor now takes an OBSERVABLE and use this to
     //add the current conditions object as an OBSERVER
     public CurrentConditionDisplay(Observable observable) {
@@ -33,6 +34,6 @@ public class CurrentConditionDisplay implements Observer, DisplayElement {
     @Override
     public void display() {
         System.out.println("- - - - - Current Conditions - - - - - ");
-        System.out.println(temperature + " F degrees and "+ humidity + "% humidity");
+        System.out.println(temperature + " F degrees and " + humidity + "% humidity");
     }
 }

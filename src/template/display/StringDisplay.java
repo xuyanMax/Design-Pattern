@@ -12,12 +12,13 @@ public class StringDisplay extends AbstractDisplay {
         width = string.getBytes().length;
     }
 
-    public void printLine(){
+    public void printLine() {
         System.out.print("+");
-        for (int i=0; i<width; i++)
+        for (int i = 0; i < width; i++)
             System.out.print("-");
         System.out.println("+");
     }
+
     @Override
     public void open() {
         printLine();
@@ -25,7 +26,7 @@ public class StringDisplay extends AbstractDisplay {
 
     @Override
     public void print() {
-        System.out.println("|"+ string + "|");
+        System.out.println("|" + string + "|");
     }
 
     @Override

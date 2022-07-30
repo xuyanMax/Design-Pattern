@@ -6,10 +6,9 @@ import observer.weather.WeatherData;
 /**
  * Created by xu on 07/07/2017.
  */
-public class ForecastDisplay implements Observer, DisplayElement {
+public class ForecastDisplay extends Observer implements DisplayElement {
     private float currentPressure = 29.92f;
     private float lastPressure;
-    private WeatherData wd;
 
     public ForecastDisplay(WeatherData weatherData) {
         this.wd = weatherData;

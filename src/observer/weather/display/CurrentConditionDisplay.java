@@ -6,12 +6,11 @@ import observer.weather.WeatherData;
 /**
  * Created by xu on 07/07/2017.
  */
-public class CurrentConditionDisplay implements Observer, DisplayElement{
+public class CurrentConditionDisplay extends Observer implements DisplayElement {
 
     private float temp;
     private float humidity;
     private float pressure;
-    private WeatherData wd;
 
     /*构造器传入一个Subject对象，并用此注册该观察者*/
     public CurrentConditionDisplay(WeatherData weatherData) {
@@ -32,7 +31,7 @@ public class CurrentConditionDisplay implements Observer, DisplayElement{
     public void display() {
         System.out.println("- - - - - - -Current conditions - - - - - -");
         System.out.println("Temperature: " + temp);
-        System.out.println("Humidity "+humidity);
-        System.out.println("Pressure "+ pressure);
+        System.out.println("Humidity " + humidity);
+        System.out.println("Pressure " + pressure);
     }
 }

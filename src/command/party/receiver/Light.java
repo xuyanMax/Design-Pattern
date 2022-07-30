@@ -4,21 +4,23 @@ package command.party.receiver;
  * Created by xu on 2017/6/29.
  */
 public class Light {
-    private String location="";
+    private String location = "";
     private int level;
 
     public Light(String location) {
         this.location = location;
     }
 
-    public void on(){
+    public void on() {
         level = 100;
         System.out.println("Light is on");
     }
-    public void off(){
+
+    public void off() {
         level = 0;
         System.out.println("Light is off");
     }
+
     public void dim(int level) {
         this.level = level;
         if (level == 0)

@@ -6,13 +6,12 @@ import observer.weather.WeatherData;
 /**
  * Created by xu on 07/07/2017.
  */
-public class StatisticsDisplay implements Observer, DisplayElement {
+public class StatisticsDisplay extends Observer implements DisplayElement {
 
     private float maxTemp = 0.0f;
     private float minTemp = 200;
     private float tempSum= 0.0f;
     private int numReadings;
-    private WeatherData wd;
 
     public StatisticsDisplay(WeatherData weatherData) {
         this.wd = weatherData;
