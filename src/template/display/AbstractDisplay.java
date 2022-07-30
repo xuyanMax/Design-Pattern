@@ -12,9 +12,9 @@ public abstract class AbstractDisplay {
 
     //模板
     public final void display() {
-        open();
+        open();//钩子方法
         for (int i = 0; i < 5; i++)
             print();
-        close();
+        close();//钩子方法
     }
 }

@@ -7,21 +7,22 @@ import java.util.Hashtable;
  * Created by xu on 01/08/2017.
  */
 public class MatchMakingTestDrive {//测试配对服务
-     Hashtable datingDB = new Hashtable();
+    Hashtable datingDB = new Hashtable();
 
-     public static void main(String[] args){
-         MatchMakingTestDrive test = new MatchMakingTestDrive();
-         test.drive();
-     }
-     // initializeDatabase
+    public static void main(String[] args) {
+        MatchMakingTestDrive test = new MatchMakingTestDrive();
+        test.drive();
+    }
+
+    // initializeDatabase
     public MatchMakingTestDrive() {
         initializeDatabase();
     }
 
-    public void drive(){
+    public void drive() {
 
-         PersonBean joe = getPersonFromDatabase("Joe Javabean");
-         PersonBean ownerProxy = getOwnerProxy(joe); //创建一个拥有者代理
+        PersonBean joe = getPersonFromDatabase("Joe Javabean");
+        PersonBean ownerProxy = getOwnerProxy(joe); //创建一个拥有者代理
         System.out.println("Name is " + ownerProxy.getName());//调用getter
         ownerProxy.setInterests("bowling, Go");//调用setter
         System.out.println("Interests set from owner proxy");
@@ -48,17 +49,19 @@ public class MatchMakingTestDrive {//测试配对服务
         System.out.println("Rating set from non owner proxy");
         System.out.println("Rating is " + nonOwnerProxy.getHotOrNotRating());
 
-     }
-     public PersonBean getPersonFromDatabase(String name){
-        return (PersonBean) datingDB.get(name);
-     }
+    }
 
-     public PersonBean getOwnerProxy(PersonBean person) {
-         return (PersonBean) Proxy.newProxyInstance(
-                 person.getClass().getClassLoader(),
-                 person.getClass().getInterfaces(),
-                 new OwnerInvocationHandler(person));
-     }
+    public PersonBean getPersonFromDatabase(String name) {
+        return (PersonBean) datingDB.get(name);
+    }
+
+    public PersonBean getOwnerProxy(PersonBean person) {
+        return (PersonBean) Proxy.newProxyInstance(
+                person.getClass().getClassLoader(),
+                person.getClass().getInterfaces(),
+                new OwnerInvocationHandler(person));
+    }
+
     PersonBean getNonOwnerProxy(PersonBean person) {
 
         return (PersonBean) Proxy.newProxyInstance(
@@ -66,7 +69,8 @@ public class MatchMakingTestDrive {//测试配对服务
                 person.getClass().getInterfaces(),
                 new NonOwnerInvocationHandler(person));
     }
-     public void initializeDatabase() {
+
+    public void initializeDatabase() {
         PersonBean joe = new PersonBeanImpl();
         joe.setName("Joe Javabean");
         joe.setInterests("cars, computers, music");
@@ -75,9 +79,9 @@ public class MatchMakingTestDrive {//测试配对服务
 
 
         PersonBean kelly = new PersonBeanImpl();
-         kelly.setName("Kelly Klosure");
-         kelly.setInterests("ebay, movies, music");
-         kelly.setHotOrNotRating(6);
-         datingDB.put(kelly.getName(), kelly);
-     }
+        kelly.setName("Kelly Klosure");
+        kelly.setInterests("ebay, movies, music");
+        kelly.setHotOrNotRating(6);
+        datingDB.put(kelly.getName(), kelly);
+    }
 }

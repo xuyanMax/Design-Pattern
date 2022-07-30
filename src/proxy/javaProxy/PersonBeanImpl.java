@@ -3,12 +3,12 @@ package proxy.javaProxy;
 /**
  * Created by xu on 01/08/2017.
  */
-public class PersonBeanImpl implements PersonBean{
+public class PersonBeanImpl implements PersonBean {
     String name;
     String gender;
     String interests;
     int rating;
-    int ratingCount=0;
+    int ratingCount = 0;
 
     @Override
     public String getName() {
@@ -43,7 +43,7 @@ public class PersonBeanImpl implements PersonBean{
     public int getHotOrNotRating() {
 
         // 计算rating平均值
-        return ratingCount==0?0:rating/ratingCount;
+        return ratingCount == 0 ? 0 : rating / ratingCount;
     }
 
     public void setHotOrNotRating(int rating) {
