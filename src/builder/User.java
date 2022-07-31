@@ -16,6 +16,11 @@ public class User {
         this.address = builder.address;
         this.phone = builder.phone;
     }
+
+    public static UserBuilder builder() {
+        return new UserBuilder();
+    }
+
     // All getters, and NO setters to provide immutability
     public String getFirstName() {
         return firstName;
@@ -49,34 +54,47 @@ public class User {
     }
 
     public static class UserBuilder {
-        private final String firstName;
-        private final String lastName;
+        private String firstName;
+        private String lastName;
         private int age;
         private String phone;
         private String address;
 
-        public UserBuilder (String firstName, String lastName) {
-            this.firstName = firstName;
-            this.lastName = lastName;
+        public UserBuilder() {
         }
 
-        public UserBuilder age (int age) {
+        public UserBuilder firstName(String name) {
+            this.firstName = name;
+            return this;
+        }
+
+        public UserBuilder lastName(String name) {
+            this.lastName = name;
+            return this;
+        }
+
+        public UserBuilder age(int age) {
             this.age = age;
             return this;
         }
 
-        public UserBuilder phone (String phone) {
+        public UserBuilder phone(String phone) {
             this.phone = phone;
             return this;
         }
 
-        public UserBuilder address (String address) {
+        public UserBuilder address(String address) {
             this.address = address;
             return this;
         }
 
         // return the finally constructed User object
         public User build() {
+            if (firstName == null || lastName == null)
+                throw new RuntimeException("姓名必填");
+            if (age <= 0 || age > 150)
+                throw new RuntimeException("年龄不合法");
+
             User user = new User(this);
             return user;
         }

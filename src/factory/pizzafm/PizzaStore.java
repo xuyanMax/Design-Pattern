@@ -9,7 +9,7 @@ public abstract class PizzaStore {
 
     public Pizza orderPizza(String type) {
         Pizza pizza = createPizza(type);
-        System.out.println("-------Making a Pizza_af--------");
+        System.out.println("-------Making a Pizza_factory--------");
         pizza.prepare();
         pizza.bake();
         pizza.cut();
